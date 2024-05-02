@@ -1,0 +1,18 @@
+    <a
+      onclick="window.location.href='petDetails___?username={{username}}&email={{email}}&phone={{phone}}&what={{what}}&petname={{petname}}&petage={{petage}}&unit_day_or_month_or_year={{unit_day_or_month_or_year}}&breed={{breed}}&pettype_dog_or_cat={{pettype_dog_or_cat}}&gender={{gender}}&Date={{date}}&city={{city}}&colour={{colour}}&state={{state}}&vaccination={{vaccination}}&pettype_rescued_or_puschase={{pettype_rescued_or_puschase}}&image={{image}}&description={{description}}'">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZ3N8ZW58MHx8MHx8&w=1000&q=80"
+          alt="Animal">
+        <div class="card-info">
+          <h5>{{petname}}</h5>
+          <p>Breed:{{breed}}</p>
+          <p>Age : {{petage}} {{unit_day_or_month_or_year}} old</p>
+          <div class="buttons">
+            <button class="details-btn"
+              onclick="window.location.href='petDetails___?username={{username}}&email={{email}}&phone={{phone}}&what={{what}}&petname={{petname}}&petage={{petage}}&unit_day_or_month_or_year={{unit_day_or_month_or_year}}&breed={{breed}}&pettype_dog_or_cat={{pettype_dog_or_cat}}&gender={{gender}}&Date={{date}}&city={{city}}&colour={{colour}}&state={{state}}&vaccination={{vaccination}}&pettype_rescued_or_puschase={{pettype_rescued_or_puschase}}&image={{image}}&description={{description}}'">Details</button>
+            {{!-- <button class="adopt-btn">Adopt</button> --}}
+          </div>
+        </div>
+      </div>
+    </a>

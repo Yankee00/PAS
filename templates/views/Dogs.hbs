@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Pet Adoption Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #666;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .search-container input[type=text] {
+      padding: 10px;
+      border: none;
+      width: 50%;
+      margin-right: 10px;
+    }
+
+    .search-container button {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    a:hover {
+      display: inline-block;
+      box-shadow: 2px 3px 10px #888888;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .login-register {
+      float: right;
+    }
+
+    #GarvBhattismyname {
+      display: flex;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: center;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Card Styling */
+
+    .card {
+      display: inline-block;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 3px solid #000000c2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 275px;
+      padding: 6px;
+      margin: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 20px;
+    }
+
+    .card-info h2 {
+      margin-top: 0;
+    }
+
+    .card-info p {
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .details-btn {
+      margin-left: 70px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>OurPets</h1>
+  </header>
+
+  <nav>
+    <a href="index">Home</a>
+    <a href="add_pets">Add Pets</a>
+    <a href="Dogs">Dogs</a>
+    <a href="Cats">Cats</a>
+    <div class="login-register">
+      <a href="ALindex">All Pets</a>
+      <a href="index">Logout</a>
+    </div>
+  </nav>
+
+  <div class="search-container">
+    <form>
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <main>
+    <div id="GarvBhattismyname"></div>
+  </main>
+
+  <script>
+    {{#each dataOfPets}}
+    if("{{pettype_dog_or_cat}}"==="dog")
+    {
+      let garv=document.createElement("span");
+      garv.innerHTML=`<a onclick="window.location.href='petDetails___?username={{username}}&email={{email}}&phone={{phone}}&what={{what}}&petname={{petname}}&petage={{petage}}&unit_day_or_month_or_year={{unit_day_or_month_or_year}}&breed={{breed}}&pettype_dog_or_cat={{pettype_dog_or_cat}}&gender={{gender}}&Date={{date}}&city={{city}}&colour={{colour}}&state={{state}}&vaccination={{vaccination}}&pettype_rescued_or_puschase={{pettype_rescued_or_puschase}}&image={{image}}&description={{description}}'">
+            <div class="card">
+              <img
+                src="{{image}}"
+                alt="Animal">
+              <div class="card-info">
+                <h5>{{petname}}</h5>
+                <p>Breed:{{breed}}</p>
+                <p>Age : {{petage}} {{unit_day_or_month_or_year}} old</p>
+                <div class="buttons">
+                  <button class="details-btn"
+                    onclick="window.location.href='petDetails___?username={{username}}&email={{email}}&phone={{phone}}&what={{what}}&petname={{petname}}&petage={{petage}}&unit_day_or_month_or_year={{unit_day_or_month_or_year}}&breed={{breed}}&pettype_dog_or_cat={{pettype_dog_or_cat}}&gender={{gender}}&Date={{date}}&city={{city}}&colour={{colour}}&state={{state}}&vaccination={{vaccination}}&pettype_rescued_or_puschase={{pettype_rescued_or_puschase}}&image={{image}}&description={{description}}'">Details</button>
+                </div>
+              </div>
+            </div>
+          </a>
+      `;
+      document.getElementById("GarvBhattismyname").appendChild(garv);
+    }
+    {{/each}}
+  </script>
+  <footer>
+    <p>&copy; 2024 OurPets</p>
+  </footer>
+
+</body>
+
+</html>

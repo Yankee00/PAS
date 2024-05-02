@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Our Pets</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #666;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .search-container input[type=text] {
+      padding: 10px;
+      border: none;
+      width: 50%;
+      margin-right: 10px;
+    }
+
+    .search-container button {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .login-register {
+      float: right;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    img {
+      height: 1000px;
+      width: 1200px;
+    }
+
+    #vision-mission {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    #vision-mission h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    #vision-mission p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* Style for top veterinarians section */
+    #top-veterinarians {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    #top-veterinarians h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    #top-veterinarians ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #top-veterinarians li {
+      margin: 0 10px 10px 0;
+      flex: 1
+    }
+
+    #top-veterinarians img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #top-veterinarians h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #top-veterinarians p {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    /* slideshow */
+    .container {
+      margin: 50px auto;
+      width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border: 10px solid;
+      border-top-color: #666;
+      border-left-color: #666;
+      border-bottom-color: #666;
+      border-right-color: #666;
+      position: relative;
+    }
+
+    .photo {
+      width: 800px;
+      height: 400px;
+      background-size: cover;
+      position: absolute;
+      animation: round 16s infinite;
+      opacity: 0;
+    }
+
+    @keyframes round {
+      25% {
+        opacity: 1;
+      }
+
+      40% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes round {
+      25% {
+        opacity: 1;
+        -webkit-opacity: 1;
+      }
+
+      40% {
+        opacity: 0;
+        -webkit-opacity: 0;
+      }
+    }
+
+    img:nth-child(1) {
+      animation-delay: 12s;
+    }
+
+    img:nth-child(5) {
+      animation-delay: 10s;
+    }
+
+    img:nth-child(2) {
+      animation-delay: 8s;
+    }
+
+    img:nth-child(3) {
+      animation-delay: 4s;
+    }
+
+    img:nth-child(4) {
+      animation-delay: 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>OurPets</h1>
+  </header>
+  <nav>
+    <a href="index">Home</a>
+    <a href="/add_pets" id="add_p">Add Pets</a>
+    <a href="Dogs">Dogs</a>
+    <a href="Cats">Cats</a>
+    <div class="login-register">
+      <a href="login">Login</a>
+      <a href="register">Register</a>
+    </div>
+  </nav>
+  <div class="search-container">
+    <form>
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <main>
+    <h2>Welcome to Our Pets!</h2>
+    <p>Here you can find information about our adoptable pets, as well as resources for pet owners and those interested
+      in pet adoption.</p>
+    {{!-- <img
+      src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZ3N8ZW58MHx8MHx8&w=1000&q=80"
+      alt="Adorable Cat and Dog" width="100%"> --}}
+
+
+
+    <p>We believe that every pet deserves a loving home. Our mission is to connect pets in need with caring individuals
+      and families. We aim to provide a safe and nurturing environment for all pets, and to raise awareness about the
+      benefits of pet adoption.</p>
+
+    <div class="container">
+      <img class='photo'
+        src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 1" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 2" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/247522/pexels-photo-247522.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 3" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/69371/pexels-photo-69371.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 4" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/14398010/pexels-photo-14398010.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 5" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/16014616/pexels-photo-16014616.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 6" />
+      <img class='photo'
+        src="https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Image 7" />
+
+    </div>
+
+
+    <section id="vision-mission">
+      <h2>Vision and Mission</h2>
+      <p>Our vision is to provide a safe and loving home for every pet in need. We aim to achieve this by facilitating
+        adoptions, providing educational resources, and partnering with local animal shelters and rescues.</p>
+      <p>Our mission is to match every pet with the perfect home, and to promote responsible pet ownership through
+        education and advocacy.</p>
+    </section>
+    <div>
+      <h1>Why should adopt a pet? here are 10 reasons why:</h1>
+      <ul>
+        <li>Pets can provide companionship and love, which can be especially beneficial for individuals who live alone
+          or
+          have limited social interactions.</li>
+        <br>
+
+        <li>Studies have shown that petting a cat or dog can help reduce stress, lower blood pressure, and decrease
+          anxiety.</li>
+        <br>
+
+        <li>Adopting a pet can improve your mental health and well-being by reducing stress and increasing feelings of
+          happiness.</li>
+        <br>
+
+        <li>Pets can help children develop empathy, responsibility, and social skills.</li>
+        <br>
+
+        <li>Dogs make great exercise partners, and taking your dog for a walk or run can help you stay active and
+          healthy.</li>
+        <br>
+
+        <li>Cats are low-maintenance pets that are easy to care for, and they can be great apartment pets.</li>
+        <br>
+
+        <li>Adopting a pet from a shelter supports the mission of animal welfare organizations and helps to reduce the
+          number of animals in need of homes.</li>
+        <br>
+
+        <li>Many shelter pets are already spayed or neutered, which can save you money on veterinary expenses.</li>
+        <br>
+
+        <li>Shelter pets are often already house-trained or have some basic obedience training.</li>
+        <br>
+
+        <li>Adopting a pet can be a fulfilling experience, and the love and companionship of a pet can make a positive
+          impact on your life.</li>
+        <br>
+      </ul>
+    </div>
+
+    <h1>10 Fun facts about pets : </h1>
+    <ul>
+      <li>Dogs have a sense of smell that is 10,000 times more powerful than humans. They can even detect some diseases
+        like cancer and diabetes.
+      </li>
+      <br>
+
+      <li>A group of pugs is called a "grumble" because of their snorting and grunting noises.
+      </li>
+      <br>
+
+      <li>Cats can jump up to six times their body length in a single bound!
+      </li>
+      <br>
+
+      <li>Dogs can make over 100 different facial expressions, while cats have only about 20.
+      </li>
+      <br>
+
+      <li>Many dog breeds were originally bred for specific purposes, such as hunting, herding, or guarding. However,
+        now they make great companions for a wide variety of lifestyles.
+      </li>
+      <br>
+
+      <li>Cats are natural hunters and have been known to bring their owners "presents" such as mice, birds, or even
+        small snakes!
+      </li>
+      <br>
+
+      <li>The oldest known cat was named Creme Puff, who lived to be 38 years and 3 days old.
+      </li>
+      <br>
+
+      <li>Some dogs have webbed feet, which helps them swim better. These breeds include Labrador Retrievers, Portuguese
+        Water Dogs, and Newfoundlands.
+      </li>
+      <br>
+
+      <li>Cats are able to rotate their ears 180 degrees, which helps them to pinpoint the source of a sound.
+      </li>
+      <br>
+
+      <li>Dogs have been known to dream and may even make noises or twitch their legs while sleeping.
+      </li>
+      <br>
+    </ul>
+
+    <section id="top-veterinarians">
+      <h2>Top Veterinarians and Doctors</h2>
+      <ul>
+        <li>
+          <img
+            src="https://st2.depositphotos.com/4226061/9064/v/950/depositphotos_90647730-stock-illustration-female-doctor-avatar-icon.jpg"
+            alt="Veterinarian">
+          <h3>Dr. Sandeep Nanavati </h3>
+          <p>Location: Dr. Sandeep Nanavati's Clinic304, Landmark: Near Shwetamber Jain Temple, Tilak Nagar, Indore,
+            Madhya Pradesh - 452018, India</p>
+        </li>
+        <li>
+          <img
+            src="https://st2.depositphotos.com/4226061/9064/v/950/depositphotos_90647730-stock-illustration-female-doctor-avatar-icon.jpg"
+            alt="Veterinarian">
+          <h3>Dr. Hemant Mehta</h3>
+          <p>Specialty: Exotic Animals</p>
+          <p>Location: My Pet Clinic & DiagnosticsEB - 137, SMJ Girls Hostel, Scheme - 94, Mahalaxmi Nagar Colony,
+            Indore, Madhya Pradesh - 452010, India</p>
+        </li>
+        <li>
+          <img
+            src="https://st2.depositphotos.com/4226061/9064/v/950/depositphotos_90647730-stock-illustration-female-doctor-avatar-icon.jpg"
+            alt="Veterinarian">
+          <h3>My Pets Clinic</h3>
+          <p>Location: LG 49 Minal Mall, J K Road, Bhopal, Madhya Pradesh. P.C. 462023, Bhopal, Bhopa</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+  <script>
+    { { !--Checking user login or not-- } }
+    let A = document.querySelector("#add_p");
+
+    A.addEventListener("click", fun);
+
+    let C = 43;
+    function fun() {
+      alert("Please login first")
+    }
+  </script>
+  <footer>
+    <p>&copy; 2024 OurPets</p>
+  </footer>
+</body>
+
+</html>
